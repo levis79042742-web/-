@@ -1,0 +1,6 @@
+{
+  "name": "這週紅什麼 Trend7",
+  "description": "六大社群，一手掌握每週爆紅趨勢。整合 Instagram、Facebook、YouTube、TikTok、小紅書、Threads 的 AI 社群爆紅趨勢搜尋與分析平台。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

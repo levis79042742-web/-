@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root,
+[data-theme="dark-tech"] {
+  --t7-bg: #090B10;
+  --t7-surface: #11151F;
+  --t7-surface-muted: #181E2C;
+  --t7-border: #232B3D;
+  --t7-text: #F8FAFC;
+  --t7-text-muted: #CBD5E1;
+  --t7-text-subtle: #94A3B8;
+  --t7-accent: #3B82F6;
+  --t7-accent-fg: #FFFFFF;
+  --t7-accent-soft: rgba(59, 130, 246, 0.16);
+  --t7-radius: 14px;
+  --t7-hero-bg: linear-gradient(135deg, #11151F 0%, #0F172A 100%);
+  color-scheme: dark;
+}
+
+[data-theme="minimal-white"] {
+  --t7-bg: #F8FAFC;
+  --t7-surface: #FFFFFF;
+  --t7-surface-muted: #F1F5F9;
+  --t7-border: #E2E8F0;
+  --t7-text: #0F172A;
+  --t7-text-muted: #475569;
+  --t7-text-subtle: #64748B;
+  --t7-accent: #0F172A;
+  --t7-accent-fg: #FFFFFF;
+  --t7-accent-soft: #E2E8F0;
+  --t7-radius: 16px;
+  --t7-hero-bg: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%);
+  color-scheme: light;
+}
+
+[data-theme="purple-ai"] {
+  --t7-bg: #0E0A1A;
+  --t7-surface: #17122B;
+  --t7-surface-muted: #21193D;
+  --t7-border: #2E2452;
+  --t7-text: #F5F3FF;
+  --t7-text-muted: #DDD6FE;
+  --t7-text-subtle: #A78BFA;
+  --t7-accent: #8B5CF6;
+  --t7-accent-fg: #FFFFFF;
+  --t7-accent-soft: rgba(139, 92, 246, 0.2);
+  --t7-radius: 18px;
+  --t7-hero-bg: linear-gradient(135deg, #1E163B 0%, #110C22 100%);
+  color-scheme: dark;
+}
+
+[data-theme="hot-orange"] {
+  --t7-bg: #FFFBF7;
+  --t7-surface: #FFFFFF;
+  --t7-surface-muted: #FFF3EB;
+  --t7-border: #FED7AA;
+  --t7-text: #1C1917;
+  --t7-text-muted: #57534E;
+  --t7-text-subtle: #78716C;
+  --t7-accent: #EA580C;
+  --t7-accent-fg: #FFFFFF;
+  --t7-accent-soft: #FFEDD5;
+  --t7-radius: 16px;
+  --t7-hero-bg: linear-gradient(135deg, #FFFFFF 0%, #FFF3EB 100%);
+  color-scheme: light;
+}
+
+[data-theme="colorful-gradient"] {
+  --t7-bg: #F5F7FF;
+  --t7-surface: #FFFFFF;
+  --t7-surface-muted: #EEF2FF;
+  --t7-border: #DDE3FA;
+  --t7-text: #111827;
+  --t7-text-muted: #4B5563;
+  --t7-text-subtle: #6B7280;
+  --t7-accent: #2563EB;
+  --t7-accent-fg: #FFFFFF;
+  --t7-accent-soft: #DBEAFE;
+  --t7-radius: 18px;
+  --t7-hero-bg: linear-gradient(135deg, #EFF6FF 0%, #FDF2F8 55%, #F5F3FF 100%);
+  color-scheme: light;
+}
+
+[data-theme="cute-healing"] {
+  --t7-bg: #F4F7F4;
+  --t7-surface: #FFFFFF;
+  --t7-surface-muted: #EAF2EE;
+  --t7-border: #D4E4DC;
+  --t7-text: #1F2933;
+  --t7-text-muted: #4A5B56;
+  --t7-text-subtle: #697D77;
+  --t7-accent: #0D9488;
+  --t7-accent-fg: #FFFFFF;
+  --t7-accent-soft: #CCFBF1;
+  --t7-radius: 22px;
+  --t7-hero-bg: linear-gradient(135deg, #FFFFFF 0%, #EDF6F2 100%);
+  color-scheme: light;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--t7-bg);
+    color: var(--t7-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  select,
+  option {
+    background-color: var(--t7-surface);
+    color: var(--t7-text);
+  }
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.t7-surface {
+  background-color: var(--t7-surface);
+  border-color: var(--t7-border);
+  border-radius: var(--t7-radius);
+}
+
+.t7-surface-muted {
+  background-color: var(--t7-surface-muted);
+}
+
+.t7-text-muted {
+  color: var(--t7-text-muted);
+}
+
+.t7-text-subtle {
+  color: var(--t7-text-subtle);
+}
+
+.t7-accent-btn {
+  background-color: var(--t7-accent);
+  color: var(--t7-accent-fg);
+}
+
+.t7-accent-soft {
+  background-color: var(--t7-accent-soft);
+  color: var(--t7-accent);
+}
+
+/* Clean custom scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes t7-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.t7-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--t7-surface-muted) 25%,
+    var(--t7-border) 50%,
+    var(--t7-surface-muted) 75%
+  );
+  background-size: 200% 100%;
+  animation: t7-shimmer 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t7-skeleton {
+    animation: none;
+  }
+}

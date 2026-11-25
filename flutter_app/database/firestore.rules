@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 熱門趨勢榜單：所有人可讀，僅後端 Admin SDK 可寫入（禁止前端偽造數據）
+    match /trends/{trendId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // 每日與每週趨勢報告：所有人可讀，僅後端寫入
+    match /reports/{reportId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // 使用者個人收藏與通知設定：僅本人讀寫
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      match /bookmarks/{bookmarkId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      match /ai_generations/{genId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+  }
+}
